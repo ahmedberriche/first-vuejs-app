@@ -41,10 +41,7 @@ export default {
   },
   methods: {
     handleDelete(id) {
-      let newTasks = [...this.tasks];
-
-      console.log("deleting ...", newTasks.splice(id, 1));
-      this.tasks = newTasks.splice(id, 1);
+      this.tasks.splice(id, 1);
     },
 
     onAddTask() {
