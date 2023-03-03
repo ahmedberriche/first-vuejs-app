@@ -1,7 +1,9 @@
 <template>
   <Header title="myFirstApp" />
   <div class="container">
-    <component :is="currentView" />
+    <div class="main-content">
+      <component :is="currentView" />
+    </div>
   </div>
 </template>
 
@@ -42,5 +44,13 @@ export default {
 .container {
   max-width: 80%;
   margin: 0 auto;
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgba(192, 192, 192, 0.4);
 }
 </style>

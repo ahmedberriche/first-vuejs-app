@@ -1,12 +1,10 @@
 <template>
-  <div class="main-content">
-    <Card
-      :username="username"
-      :email="email"
-      :actionButton="getUser"
-      :picture="picture"
-    />
-  </div>
+  <Card
+    :username="username"
+    :email="email"
+    :actionButton="getUser"
+    :picture="picture"
+  />
 </template>
 
 <script>
@@ -40,13 +38,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  background: rgba(192, 192, 192, 0.4);
-}
-</style>
+<style scoped></style>
