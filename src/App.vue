@@ -1,7 +1,7 @@
 <template>
   <Header title="myFirstApp" />
   <div class="container">
-    <CardProfile />
+    <component :is="currentView" />
   </div>
 </template>
 
@@ -10,15 +10,31 @@ import Header from "./components/Header.vue";
 import CardProfile from "./views/CardProfile.vue";
 import TodoTask from "./views/TodoTask.vue";
 
-// const routes = {
-//   "/": CardProfile,
-//   "/task": TodoTask,
-// };
+const routes = {
+  "/": CardProfile,
+  "/task": TodoTask,
+};
 export default {
   name: "App",
   components: {
     Header,
     CardProfile,
+  },
+  data() {
+    return {
+      currentPath: window.location.hash,
+    };
+  },
+  computed: {
+    currentView() {
+      console.log("test", this.currentPath.slice(1));
+      return routes[this.currentPath.slice(1) || "/"];
+    },
+  },
+  mounted() {
+    window.addEventListener("hashchange", () => {
+      this.currentPath = window.location.hash;
+    });
   },
 };
 </script>
