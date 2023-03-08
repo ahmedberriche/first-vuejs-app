@@ -2,10 +2,9 @@
   <div class="task" :key="index">
     <div class="task-title">
       {{ title }}
-      <div style="font-weight: 400">{{ createdAt }}</div>
+      <button @click="onDelete(index)">remove</button>
     </div>
-
-    <button @click="onDelete(index)">remove</button>
+    <p style="font-weight: 400">{{ createdAt }}</p>
   </div>
 </template>
 <script>
@@ -16,10 +15,8 @@ export default {
 </script>
 <style scoped>
 .task {
-  display: flex;
   padding: 15px;
   background: #cfd4d0;
-  justify-content: space-between;
   border-left: 5px solid #05a32c;
 }
 .task-title {
@@ -37,5 +34,6 @@ export default {
   font-size: 15px;
   border-radius: 10px;
   margin-left: 15px;
+  float: right;
 }
 </style>
