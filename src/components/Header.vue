@@ -3,6 +3,9 @@
     <div class="container">
       <div class="main-content">
         <span>{{ title }}</span>
+        <article>
+          <a href="#/">Card Profile</a> <a href="#/task">Task tracker</a>
+        </article>
       </div>
     </div>
   </header>
@@ -30,7 +33,14 @@ export default {
 .main-content {
   height: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+}
+.main-content a {
+  text-decoration: none;
+  color: #fff;
+}
+.main-content a:not(:last-child) {
+  margin-right: 10px;
 }
 </style>
