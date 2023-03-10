@@ -22,6 +22,7 @@
           :createdAt="task.createdAt"
           :title="task.title"
           :index="index"
+          :isNew="index === tasks.length - 1 ? true : false"
         />
       </div>
     </div>

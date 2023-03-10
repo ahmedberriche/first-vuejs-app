@@ -10,7 +10,14 @@
 <script>
 export default {
   name: "Task",
-  props: ["onDelete", "createdAt", "title", "index"],
+  props: ["onDelete", "createdAt", "title", "index", "isNew"],
+  mounted() {
+    console.log(console.log(document.querySelectorAll(".task")));
+    let listTask = document.querySelectorAll(".task");
+
+    this.isNew &&
+      gsap.from(listTask[this.index], { duration: 1, xPercent: -100 });
+  },
 };
 </script>
 <style scoped>
